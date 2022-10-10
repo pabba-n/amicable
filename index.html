@@ -1,0 +1,42 @@
+<script>
+    x = prompt("input first number: ", "");
+    y = prompt("input second number: ", "");
+    function isAFactor(i, x) {
+        if(parseInt(x) % i === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function calcFactor(arr, x) {
+        arrSum = 0
+        for(i = 2; i <= x; i++) {
+            if(isAFactor(i, x)) {
+                arr[i] =  x/i;
+                arrSum += x/i;
+            }
+        }
+        return arrSum;
+    }
+    function printFactors(arrSum, arr, x, y) {
+        if(arrSum == x){
+            document.write("factors for " + y + "<br>");
+            for (i in arr) {
+                document.write("" + arr[i] + "<br>");
+            }
+        }
+    }
+    function checkBoth(x, y) {
+        arrX = [];
+        arrSumX = 0;
+        arrY = [];
+        arrSumY = 0;
+        arrSumX = calcFactor(arrX, x);
+        printFactors(arrSumX, arrX, y, x)
+        arrSumY = calcFactor(arrY, y);
+        printFactors(arrSumY, arrY, x, y);
+    }
+
+    checkBoth(x, y);
+   
+</script>
