@@ -1,7 +1,7 @@
 <header></header>
 <body>
     <div id="amic"></div>
-    <div id="Factors"></div>
+    <div id="factors"></div>
 <script>
     x = prompt("input first number: ", "");
     y = prompt("input second number: ", "");
@@ -44,11 +44,10 @@
         arrSumY = 0;
         arrSumX = calcFactor(arrX, x);
         xFactors = printFactors(arrSumX, arrX, y, x);
-        // document.getElementById("xFactors").innerHTML = xFactors;
         arrSumY = calcFactor(arrY, y);
         yFactors = printFactors(arrSumY, arrY, x, y);
         if(xFactors != null && yFactors != null){
-            document.getElementById("Factors").innerHTML = "<br> factors of " + x + "<br>" + xFactors + "<br> factors of " + y + "<br>" + yFactors;
+            document.getElementById("factors").innerHTML = "<br> factors of " + x + "<br>" + xFactors + "<br> factors of " + y + "<br>" + yFactors;
         }
        
     }
