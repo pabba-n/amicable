@@ -1,10 +1,13 @@
 <header></header>
 <body>
+
     <div id="amic"></div>
     <div id="factors"></div>
+    
 <script>
     x = prompt("input first number: ", "");
     y = prompt("input second number: ", "");
+
     function isAFactor(i, x) {
         if(parseInt(x) % i === 0) {
             return true;
@@ -22,12 +25,10 @@
         }
         return arrSum;
     }
+
     function printFactors(arrSum, arr, x, y) {
         if(arrSum == x){
             document.getElementById('amic').innerHTML = x + " & " + y + " are amicable numbers" + "<br>";
-
-
-            // document.write("factors for " + y + "<br>");
             var listFactors = "";
             for (i in arr) {
                 listFactors = listFactors + arr[i] + "<br>";
@@ -37,6 +38,7 @@
             document.getElementById('amic').innerHTML = x + " & " + y + " are NOT amicable numbers" + "<br>";
         }
     }
+
     function checkBoth(x, y) {
         arrX = [];
         arrSumX = 0;
@@ -48,8 +50,7 @@
         yFactors = printFactors(arrSumY, arrY, x, y);
         if(xFactors != null && yFactors != null){
             document.getElementById("factors").innerHTML = "<br> factors of " + x + "<br>" + xFactors + "<br> factors of " + y + "<br>" + yFactors;
-        }
-       
+        } 
     }
 
     checkBoth(x, y);
